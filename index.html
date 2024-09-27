@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funksjoner med returverdi</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <button onclick="displayHtml('purple', 'Hei, hvordan har du det?', 20)">
+      Norsk
+    </button>
+    <button onclick="displayHtml('plum', 'Bonjour, sa va?', 30)">Fransk</button>
+    <button onclick="displayHtml('pink', 'Abbedi, I be dii?', 40)">
+      Mandinka
+    </button>
+
+    <script>
+      const outputHtml = document.getElementById("app");
+
+      function displayHtml(color, text, fontSize) {
+        outputHtml.innerHTML = /*html*/ `
+          <div ${createStyle(color, fontSize)}>${text}</div>
+      `;
+      }
+
+      function createStyle(color, fontSize) {
+        return `style="${createbackgroundColor(color)}; ${createFontSize(
+          fontSize
+        )}"`;
+      }
+
+      function createbackgroundColor(color) {
+        return `background-color: ${color}`;
+      }
+
+      function createFontSize(fontSize) {
+        return `font-size: ${fontSize}px`;
+      }
+    </script>
+  </body>
+</html>
